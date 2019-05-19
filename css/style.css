@@ -1,55 +1,91 @@
-nav {
-  padding: 50px;
-  text-align: center;
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-nav > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  background-color: #f2bcbc;
-  border-radius: 5px;
+
+body{
+	font-family: 'calibri', sans-serif;
 }
-.drop-menu > li {
-  list-style: none;
+
+h1{
+	margin: 2em 0 0;
+	text-align: center;
+	text-transform: uppercase;
 }
-nav > ul > li {
-  float: left;
-  width: 150px;
-  height: 65px;
-  line-height: 65px;
-  position: relative;
-  text-transform: uppercase;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
+
+p{
+	text-align: center;
+	margin: 0;
 }
-nav > ul > li:hover {
-  background-color: #f7d6d6;
-  border-radius: 5px;
+
+nav ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
-ul.drop-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  padding: 0;
+
+.access-menu{
+	display: table;
+	margin: 1em auto;
 }
-ul.drop-menu li {
-  background-color: #a98383;
-  color: rgba(252, 241, 241, 0.7);
+
+.access-menu > li{
+	background: #333;
+	display: inline-block;
+	position: relative;
 }
-ul.drop-menu li:hover {
-  background: #917070;
+
+.access-menu > li + li{
+	border-left: solid 1px #000;
 }
-ul.drop-menu li:last-child {
-  border-radius: 0 0 5px 5px;
+
+.access-menu > li:hover .access-submenu{
+	top: 100%;
+	left: auto;
 }
-ul.drop-menu li {
-  display: none;
-  -webkit-transition: all 0.3s ease-in-out;
+
+.access-menu a{
+	color: #eee;
+	display: block;
+	padding: .5em 2em;
+	text-decoration: none;
+
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-ms-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
 }
-li:hover > ul.drop-menu li {
-  display: block;
+
+.access-menu a:hover,
+.access-menu a:focus{
+	background: #369;
+	outline: none;
+}
+
+.access-submenu{
+	background: #444;
+	left: -9999px;
+	position: absolute;
+	top: -9999px;
+	width: 150%;
+}
+
+.access-submenu > li + li{
+	border-top: solid 1px #000;
+}
+
+.access-submenu > li:last-child{
+	border-bottom: solid 3px #000;
+}
+
+.access-submenu a{
+	padding: .5em 1em;
+}
+
+.is-show{
+	left: auto;
+	top: 100%;
 }
